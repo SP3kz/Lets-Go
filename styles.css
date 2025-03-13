@@ -1,0 +1,79 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fullscreen WebGL Background */
+#webgl-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Body Styling */
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(45deg, #0d0d0d, #1a1a1a);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+/* Parallax Layers */
+.parallax-layer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.layer1 {
+    background: url('https://source.unsplash.com/random/1600x900/?abstract') no-repeat center;
+    transform: translateZ(-400px) scale(1.5);
+}
+
+.layer2 {
+    background: url('https://source.unsplash.com/random/1600x900/?fractal') no-repeat center;
+    transform: translateZ(-200px) scale(1.3);
+    mix-blend-mode: difference;
+    opacity: 0.8;
+}
+
+.layer3 {
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 80%);
+    transform: translateZ(-100px) scale(1.1);
+}
+
+/* Fluid & Morphing Text */
+.fluid-text {
+    font-size: 5rem;
+    animation: textMorph 6s infinite alternate ease-in-out;
+}
+
+@keyframes textMorph {
+    0% { letter-spacing: 2px; transform: scale(1); }
+    100% { letter-spacing: 10px; transform: scale(1.1); }
+}
+
+/* Dynamic Paragraph Text */
+.dynamic-text {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.dynamic-text:hover {
+    color: cyan;
+    transform: scale(1.1);
+}
